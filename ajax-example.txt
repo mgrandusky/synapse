@@ -1,0 +1,24 @@
+<script>
+  $.ajax({
+    type: 'GET',
+    url: 'https://www.emeraldexpositions.com/wp-json/wp/v2/pages?slug=privacy-policy',
+    data: { get_param: 'value' },
+    dataType: 'json',
+    success: function (data) {
+      $.each(data, function(index, element) {
+        $("#privacy").html(element.content.rendered);
+      });
+    }
+  });
+  $.ajax({
+    type: 'GET',
+    url: 'https://www.emeraldexpositions.com/wp-json/wp/v2/pages?slug=terms-of-use',
+    data: { get_param: 'value' },
+    dataType: 'json',
+    success: function (data) {
+      $.each(data, function(index, element) {
+        $("#terms").html(element.content.rendered);
+      });
+    }
+  });
+</script>Í
